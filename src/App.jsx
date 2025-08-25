@@ -39,10 +39,16 @@ function App() {
     </li>
   ));
 
+  function handleAddTodo(todo) {
+    setTodos([...todos, { name: todo, complete: false }]);
+  }
+
   return (
     <>
-      <CreateTodo />
+      <CreateTodo onAddTodo={handleAddTodo} />
       <ul>{todoItem}</ul>
+      {/* I can also add a section or component or part of the Todo that display the completed todos or like a visitbility option to show only 
+      completed or not completed  */}
     </>
   );
 }
