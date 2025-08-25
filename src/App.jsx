@@ -2,10 +2,8 @@ import { useState } from "react";
 import Icon from "@mdi/react";
 import { mdiCheckboxIntermediate, mdiCheckboxBlankOutline } from "@mdi/js";
 import { CreateTodo } from "./CreateTodo.jsx";
-// import { mdiCheckboxIntermediate } from "@mdi/js";
 
 function App() {
-  // const [count, setCount] = useState(0);
   const [todos, setTodos] = useState([
     { name: "Buy groceries", complete: false },
     { name: "Clean the house", complete: true },
@@ -14,6 +12,7 @@ function App() {
     { name: "Read a book", complete: false },
   ]);
 
+  // Add an X icon to delete TODO
   let todoItem = todos.map((todo, index) => (
     <li key={index}>
       <Icon
@@ -49,6 +48,7 @@ function App() {
       <ul>{todoItem}</ul>
       {/* I can also add a section or component or part of the Todo that display the completed todos or like a visitbility option to show only 
       completed or not completed  */}
+      {/* Add a button to delete all TODOs */}
     </>
   );
 }
