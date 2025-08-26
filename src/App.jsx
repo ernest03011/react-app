@@ -1,25 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Icon from "@mdi/react";
 import { mdiCheckboxIntermediate, mdiCheckboxBlankOutline } from "@mdi/js";
 import { CreateTodo } from "./CreateTodo.jsx";
 
 function App() {
   const [todos, setTodos] = useState([
-    { name: "Buy groceries", complete: false },
-    { name: "Clean the house", complete: true },
-    { name: "Finish project report", complete: false },
-    { name: "Call the bank", complete: true },
-    { name: "Read a book", complete: false },
+    { name: "Buy groceries", complete: false, id: crypto.randomUUID() },
+    { name: "Clean the house", complete: true, id: crypto.randomUUID() },
+    { name: "Finish project report", complete: false, id: crypto.randomUUID() },
+    { name: "Call the bank", complete: true, id: crypto.randomUUID() },
+    { name: "Read a book", complete: false, id: crypto.randomUUID() },
   ]);
 
   // Add an X icon to delete TODO
-  let todoItem = todos.map((todo, index) => (
-    <li key={index}>
+  let todoItem = todos.map((todo) => (
+    <li key={todo.id}>
       <Icon
         onClick={() => {
           setTodos(
-            todos.map((value, i) => {
-              return i === index
+            todos.map((value) => {
+              return todo.id === value.id
                 ? { ...value, complete: !value.complete }
                 : value;
             })
@@ -39,7 +39,10 @@ function App() {
   ));
 
   function handleAddTodo(todo) {
-    setTodos([...todos, { name: todo, complete: false }]);
+    setTodos([
+      ...todos,
+      { name: todo, complete: false, id: crypto.randomUUID() },
+    ]);
   }
 
   return (
