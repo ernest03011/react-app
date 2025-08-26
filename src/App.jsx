@@ -47,11 +47,12 @@ function App() {
 
   return (
     <>
+      {/* A heading */}
       <CreateTodo onAddTodo={handleAddTodo} />
       <ul>{todoItem}</ul>
       {/* I can also add a section or component or part of the Todo that display the completed todos or like a visitbility option to show only 
       completed or not completed  */}
-      {/* Add a button to delete all TODOs */}
+      {/* Add an status Bar component with a list of the items left to be completed, a sorting option with all, active, completed, and a button to delete all completed TODOs */}
     </>
   );
 }
