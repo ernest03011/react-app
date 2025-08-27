@@ -1,7 +1,6 @@
 import { useState } from "react";
-import Icon from "@mdi/react";
-import { mdiCheckboxIntermediate, mdiCheckboxBlankOutline } from "@mdi/js";
 import { CreateTodo } from "./CreateTodo.jsx";
+import List from "./List.jsx";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -12,44 +11,12 @@ function App() {
     { name: "Read a book", complete: false, id: crypto.randomUUID() },
   ]);
 
-  // Add an X icon to delete TODO
-  let todoItem = todos.map((todo) => (
-    <li key={todo.id}>
-      <Icon
-        onClick={() => {
-          setTodos(
-            todos.map((value) => {
-              return todo.id === value.id
-                ? { ...value, complete: !value.complete }
-                : value;
-            })
-          );
-        }}
-        data-todo-status={todo.complete}
-        className="inline"
-        path={
-          todo.complete === true
-            ? mdiCheckboxIntermediate
-            : mdiCheckboxBlankOutline
-        }
-        size={1}
-      />
-      {todo.name}
-    </li>
-  ));
-
-  // function handleAddTodo(todo) {
-  //   setTodos([
-  //     ...todos,
-  //     { name: todo, complete: false, id: crypto.randomUUID() },
-  //   ]);
-  // }
-
   return (
     <>
       {/* A heading */}
       <CreateTodo todos={todos} setTodos={setTodos} />
-      <ul>{todoItem}</ul>
+      {/* <ul>{todoItem}</ul> */}
+      <List todos={todos} setTodos={setTodos} />
       {/* I can also add a section or component or part of the Todo that display the completed todos or like a visitbility option to show only 
       completed or not completed  */}
       {/* Add an status Bar component with a list of the items left to be completed, a sorting option with all, active, completed, and a button to delete all completed TODOs */}
