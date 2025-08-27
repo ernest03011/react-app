@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Icon from "@mdi/react";
 import { mdiCheckboxIntermediate, mdiCheckboxBlankOutline } from "@mdi/js";
 import { CreateTodo } from "./CreateTodo.jsx";
@@ -38,17 +38,17 @@ function App() {
     </li>
   ));
 
-  function handleAddTodo(todo) {
-    setTodos([
-      ...todos,
-      { name: todo, complete: false, id: crypto.randomUUID() },
-    ]);
-  }
+  // function handleAddTodo(todo) {
+  //   setTodos([
+  //     ...todos,
+  //     { name: todo, complete: false, id: crypto.randomUUID() },
+  //   ]);
+  // }
 
   return (
     <>
       {/* A heading */}
-      <CreateTodo onAddTodo={handleAddTodo} />
+      <CreateTodo todos={todos} setTodos={setTodos} />
       <ul>{todoItem}</ul>
       {/* I can also add a section or component or part of the Todo that display the completed todos or like a visitbility option to show only 
       completed or not completed  */}

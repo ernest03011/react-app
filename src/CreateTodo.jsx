@@ -3,14 +3,22 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { useState } from "react";
 
-export function CreateTodo({ onAddTodo }) {
+export function CreateTodo({ todos, setTodos }) {
   const [value, setValue] = useState("");
 
+  function handleAddTodo(todo) {
+    setTodos([
+      ...todos,
+      { name: todo, complete: false, id: crypto.randomUUID() },
+    ]);
+  }
+
   function handleSubmit(e) {
-    console.log(e);
     e.preventDefault();
+
     if (value.trim() === "") return;
-    onAddTodo(value);
+
+    handleAddTodo(value);
     setValue("");
   }
 
