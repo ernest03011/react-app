@@ -1,32 +1,24 @@
-import Icon from "@mdi/react";
-import { mdiCheckboxIntermediate, mdiCheckboxBlankOutline } from "@mdi/js";
+import ListItem from "./ListItem";
 
 function List({ todos, setTodos }) {
+  function handleToggle(todo) {
+    setTodos(
+      todos.map((value) => {
+        return todo.id === value.id
+          ? { ...value, complete: !value.complete }
+          : value;
+      })
+    );
+  }
+
   return (
     <ul>
       {todos.map((todo) => (
-        <li key={todo.id}>
-          <Icon
-            onClick={() => {
-              setTodos(
-                todos.map((value) => {
-                  return todo.id === value.id
-                    ? { ...value, complete: !value.complete }
-                    : value;
-                })
-              );
-            }}
-            data-todo-status={todo.complete}
-            className="inline"
-            path={
-              todo.complete === true
-                ? mdiCheckboxIntermediate
-                : mdiCheckboxBlankOutline
-            }
-            size={1}
-          />
-          {todo.name}
-        </li>
+        <ListItem
+          key={todo.id}
+          todo={todo}
+          onToggle={() => handleToggle(todo)}
+        />
       ))}
     </ul>
   );
