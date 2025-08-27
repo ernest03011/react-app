@@ -11,6 +11,10 @@ function List({ todos, setTodos }) {
     );
   }
 
+  function handleDelete(todo) {
+    setTodos(todos.filter((value) => value.id !== todo.id));
+  }
+
   return (
     <ul>
       {todos.map((todo) => (
@@ -18,6 +22,7 @@ function List({ todos, setTodos }) {
           key={todo.id}
           todo={todo}
           onToggle={() => handleToggle(todo)}
+          handleDelete={() => handleDelete(todo)}
         />
       ))}
     </ul>

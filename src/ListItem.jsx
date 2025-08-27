@@ -1,7 +1,11 @@
 import Icon from "@mdi/react";
-import { mdiCheckboxIntermediate, mdiCheckboxBlankOutline } from "@mdi/js";
+import {
+  mdiCheckboxIntermediate,
+  mdiCheckboxBlankOutline,
+  mdiTrashCanOutline,
+} from "@mdi/js";
 
-function ListItem({ todo, onToggle }) {
+function ListItem({ todo, onToggle, handleDelete }) {
   return (
     <li>
       <Icon
@@ -16,6 +20,12 @@ function ListItem({ todo, onToggle }) {
         size={1}
       />
       {todo.name}
+      <Icon
+        path={mdiTrashCanOutline}
+        className="inline"
+        size={1}
+        onClick={handleDelete}
+      />
     </li>
   );
 }
