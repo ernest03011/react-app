@@ -5,7 +5,7 @@ import TodoMenuBar from "./TodoMenuBar";
 function List({ todos, setTodos }) {
   // all, active, completed
   const [filter, setFilter] = useState("all");
-  const filteredTodos = useMemo(() => filterTodos(filter), [filter]);
+  const filteredTodos = useMemo(() => filterTodos(filter), [filter, todos]);
 
   function filterTodos(filter) {
     let filteredTodos = todos.filter((todo) => {
