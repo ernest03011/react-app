@@ -11,6 +11,15 @@ function List({ todos, setTodos }) {
     );
   }
 
+  function handleEdit(todo, newTaskName) {
+    setTodos(
+      todos.map((value) => {
+        console.log("We are editing!");
+        return todo.id === value.id ? { ...value, name: newTaskName } : value;
+      })
+    );
+  }
+
   function handleDelete(todo) {
     setTodos(todos.filter((value) => value.id !== todo.id));
   }
@@ -23,6 +32,7 @@ function List({ todos, setTodos }) {
           todo={todo}
           onToggle={() => handleToggle(todo)}
           handleDelete={() => handleDelete(todo)}
+          handleEdit={handleEdit}
         />
       ))}
     </ul>
