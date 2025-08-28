@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-function TodoMenuBar({ todos, handleDelete }) {
+function TodoMenuBar({ todos, setTodos }) {
   const [itemsLeft, setItemsLeft] = useState(0);
 
   useEffect(() => {
@@ -14,6 +14,13 @@ function TodoMenuBar({ todos, handleDelete }) {
 
     setItemsLeft(counter);
   }, [todos]);
+
+  function deleteCompletedTodos() {
+    const inCompletedTodos = todos.filter((todo) => !todo.complete);
+
+    setTodos(inCompletedTodos);
+  }
+
   return (
     <>
       <ul>
@@ -26,7 +33,7 @@ function TodoMenuBar({ todos, handleDelete }) {
       </ul>
       <ul>
         <li>
-          <button>Clear Completed</button>
+          <button onClick={deleteCompletedTodos}>Clear Completed</button>
         </li>
       </ul>
     </>

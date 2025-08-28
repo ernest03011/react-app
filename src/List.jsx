@@ -37,7 +37,7 @@ function List({ todos, setTodos }) {
           />
         ))}
       </ul>
-      <TodoMenuBar todos={todos} handleDelete={handleDelete} />
+      <TodoMenuBar todos={todos} setTodos={setTodos} />
     </>
   );
 }
