@@ -1,7 +1,30 @@
+import { useState } from "react";
 import ListItem from "./ListItem";
 import TodoMenuBar from "./TodoMenuBar";
+import { useMemo } from "react";
 
 function List({ todos, setTodos }) {
+  // all, active, completed
+  const [filter, setFilter] = useState("all");
+
+  function filterTodos(filter) {
+    let filteredTodos = todos.filter((todo) => {
+      if (filter === "active") {
+        return !todo.complete;
+      }
+
+      if (filter === "completed") {
+        return todo.complete;
+      }
+
+      return todo;
+    });
+
+    return filteredTodos;
+  }
+
+  const filteredTodos = useMemo(() => filterTodos(filter), [filter]);
+
   function handleToggle(todo) {
     setTodos(
       todos.map((value) => {
@@ -27,7 +50,7 @@ function List({ todos, setTodos }) {
   return (
     <>
       <ul>
-        {todos.map((todo) => (
+        {filteredTodos.map((todo) => (
           <ListItem
             key={todo.id}
             todo={todo}
