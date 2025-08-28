@@ -14,17 +14,36 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useState } from "react";
 
-export function EditTodoModal() {
+export function EditTodoModal({ handleEdit, todo }) {
+  const [value, setValue] = useState(todo.name);
+  const [open, setOpen] = useState(false);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (value.trim() === "") return;
+
+    handleEdit(todo, value);
+    setValue("");
+    setOpen(false);
+  }
+
   return (
-    <Dialog>
-      <form>
-        <DialogTrigger asChild>
-          <span className="inline">
-            <Icon path={mdiBookEditOutline} size={1} />
-          </span>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
+        <span className="inline">
+          <Icon
+            path={mdiBookEditOutline}
+            size={1}
+            onClick={() => {
+              setOpen(true);
+            }}
+          />
+        </span>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <form onSubmit={handleSubmit}>
           <DialogHeader>
             <DialogTitle>Edit Task</DialogTitle>
             <DialogDescription>Edit the task name</DialogDescription>
@@ -32,7 +51,14 @@ export function EditTodoModal() {
           <div className="grid gap-4">
             <div className="grid gap-3">
               <Label htmlFor="name-1">Name</Label>
-              <Input id="name-1" name="name" defaultValue="Pedro Duarte" />
+              <Input
+                id="name-1"
+                name="name"
+                value={value}
+                onChange={(e) => {
+                  setValue(e.target.value);
+                }}
+              />
             </div>
           </div>
           <DialogFooter>
@@ -41,8 +67,8 @@ export function EditTodoModal() {
             </DialogClose>
             <Button type="submit">Save changes</Button>
           </DialogFooter>
-        </DialogContent>
-      </form>
+        </form>
+      </DialogContent>
     </Dialog>
   );
 }
