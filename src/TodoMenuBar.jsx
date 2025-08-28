@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-function TodoMenuBar({ todos, setTodos }) {
+function TodoMenuBar({ todos, setTodos, setFilter }) {
   const [itemsLeft, setItemsLeft] = useState(0);
 
   useEffect(() => {
@@ -21,15 +21,40 @@ function TodoMenuBar({ todos, setTodos }) {
     setTodos(inCompletedTodos);
   }
 
+  function applyFilter(filter) {
+    setFilter(filter);
+  }
+
   return (
     <>
       <ul>
         <li>{itemsLeft} items left</li>
       </ul>
       <ul>
-        <li>All</li>
-        <li>Active</li>
-        <li>Completed</li>
+        <li
+          onClick={() => {
+            applyFilter("all");
+          }}
+          className="cursor"
+        >
+          All
+        </li>
+        <li
+          onClick={() => {
+            applyFilter("active");
+          }}
+          className="cursor"
+        >
+          Active
+        </li>
+        <li
+          onClick={() => {
+            applyFilter("completed");
+          }}
+          className="cursor"
+        >
+          Completed
+        </li>
       </ul>
       <ul>
         <li>
