@@ -15,7 +15,6 @@ function List({ todos, setTodos }) {
   function handleEdit(todo, newTaskName) {
     setTodos(
       todos.map((value) => {
-        console.log("We are editing!");
         return todo.id === value.id ? { ...value, name: newTaskName } : value;
       })
     );
