@@ -1,4 +1,5 @@
 import ListItem from "./ListItem";
+import TodoMenuBar from "./TodoMenuBar";
 
 function List({ todos, setTodos }) {
   function handleToggle(todo) {
@@ -25,17 +26,20 @@ function List({ todos, setTodos }) {
   }
 
   return (
-    <ul>
-      {todos.map((todo) => (
-        <ListItem
-          key={todo.id}
-          todo={todo}
-          onToggle={() => handleToggle(todo)}
-          handleDelete={() => handleDelete(todo)}
-          handleEdit={handleEdit}
-        />
-      ))}
-    </ul>
+    <>
+      <ul>
+        {todos.map((todo) => (
+          <ListItem
+            key={todo.id}
+            todo={todo}
+            onToggle={() => handleToggle(todo)}
+            handleDelete={() => handleDelete(todo)}
+            handleEdit={handleEdit}
+          />
+        ))}
+      </ul>
+      <TodoMenuBar todos={todos} handleDelete={handleDelete} />
+    </>
   );
 }
 
