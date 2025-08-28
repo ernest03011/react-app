@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function TodoMenuBar({ todos, setTodos, setFilter }) {
   const [itemsLeft, setItemsLeft] = useState(0);
