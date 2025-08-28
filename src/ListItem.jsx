@@ -4,10 +4,11 @@ import {
   mdiCheckboxBlankOutline,
   mdiTrashCanOutline,
 } from "@mdi/js";
+import EditTodoModal from "./EditTodoModal";
 
 function ListItem({ todo, onToggle, handleDelete }) {
   return (
-    <li>
+    <li className="flex">
       <Icon
         onClick={onToggle}
         data-todo-status={todo.complete}
@@ -20,10 +21,11 @@ function ListItem({ todo, onToggle, handleDelete }) {
         size={1}
       />
       {todo.name}
+      <EditTodoModal></EditTodoModal>
       <Icon
-        path={mdiTrashCanOutline}
         className="inline"
         size={1}
+        path={mdiTrashCanOutline}
         onClick={handleDelete}
       />
     </li>
