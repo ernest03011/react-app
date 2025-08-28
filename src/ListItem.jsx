@@ -6,7 +6,7 @@ import {
 } from "@mdi/js";
 import EditTodoModal from "./EditTodoModal";
 
-function ListItem({ todo, onToggle, handleDelete }) {
+function ListItem({ todo, onToggle, handleDelete, handleEdit }) {
   return (
     <li className="flex">
       <Icon
@@ -21,7 +21,7 @@ function ListItem({ todo, onToggle, handleDelete }) {
         size={1}
       />
       {todo.name}
-      <EditTodoModal></EditTodoModal>
+      <EditTodoModal handleEdit={handleEdit} todo={todo}></EditTodoModal>
       <Icon
         className="inline"
         size={1}
