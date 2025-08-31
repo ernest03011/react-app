@@ -25,8 +25,6 @@ export function CreateTodo({ todos, setTodos }) {
   return (
     <div className="flex items-center justify-center">
       <Card className="">
-        <h3>This is a Todo List APP</h3>
-
         <form onSubmit={handleSubmit}>
           <Input
             type="text"
