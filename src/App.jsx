@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { CreateTodo } from "./CreateTodo.jsx";
 import List from "./List.jsx";
+import Heading from "./Heading.jsx";
 
 function App() {
   const [todos, setTodos] = useState(() => {
@@ -15,7 +16,10 @@ function App() {
 
   return (
     <>
-      {/* A heading */}
+      <Heading>
+        <h1 className="mb-4 italic font-bold">Your Todo App</h1>
+      </Heading>
+
       <CreateTodo todos={todos} setTodos={setTodos} />
 
       <List todos={todos} setTodos={setTodos} />
