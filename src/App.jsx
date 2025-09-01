@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="bg-white px-10 py-10 rounded-3xl flex items-center justify-center flex-col max-w-90 m-auto">
       <Heading>
-        <h1 className="mb-4 italic font-bold">Your Todo App</h1>
+        <h1 className="mb-6 italic font-bold">Your Todo App</h1>
       </Heading>
 
       <CreateTodo todos={todos} setTodos={setTodos} />

@@ -23,7 +23,7 @@ export function CreateTodo({ todos, setTodos }) {
   }
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center mb-2">
       <Card className="">
         <form onSubmit={handleSubmit}>
           <Input
