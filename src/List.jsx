@@ -58,7 +58,12 @@ function List({ todos, setTodos }) {
           />
         ))}
       </ul>
-      <TodoMenuBar todos={todos} setTodos={setTodos} setFilter={setFilter} />
+      <TodoMenuBar
+        todos={todos}
+        setTodos={setTodos}
+        filter={filter}
+        setFilter={setFilter}
+      />
     </>
   );
 }
