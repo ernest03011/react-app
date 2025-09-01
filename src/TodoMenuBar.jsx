@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function TodoMenuBar({ todos, setTodos, setFilter }) {
+function TodoMenuBar({ todos, setTodos, filter, setFilter }) {
   const [itemsLeft, setItemsLeft] = useState(0);
 
   useEffect(() => {
@@ -20,21 +20,23 @@ function TodoMenuBar({ todos, setTodos, setFilter }) {
     setTodos(inCompletedTodos);
   }
 
-  function applyFilter(filter) {
-    setFilter(filter);
+  function applyFilter(newFilter) {
+    setFilter(newFilter);
   }
 
   return (
-    <>
-      <ul>
+    <div className="grid sm:grid-cols-12 gap-2">
+      <ul className="col-span-2">
         <li>{itemsLeft} items left</li>
       </ul>
-      <ul>
+      <ul className="flex col-span-8 gap-2">
         <li
           onClick={() => {
             applyFilter("all");
           }}
-          className="cursor"
+          className={` ${
+            filter == "all" ? "text-blue-950 font-bold" : ""
+          } cursor hover:text-blue-950 hover:font-bold`}
         >
           All
         </li>
@@ -42,7 +44,9 @@ function TodoMenuBar({ todos, setTodos, setFilter }) {
           onClick={() => {
             applyFilter("active");
           }}
-          className="cursor"
+          className={` ${
+            filter == "active" ? "text-blue-950 font-bold" : ""
+          } cursor hover:text-blue-950 hover:font-bold`}
         >
           Active
         </li>
@@ -50,17 +54,19 @@ function TodoMenuBar({ todos, setTodos, setFilter }) {
           onClick={() => {
             applyFilter("completed");
           }}
-          className="cursor"
+          className={` ${
+            filter == "completed" ? "text-blue-950 font-bold" : ""
+          } cursor hover:text-blue-950 hover:font-bold`}
         >
           Completed
         </li>
       </ul>
-      <ul>
+      <ul className="col-span-2">
         <li>
           <button onClick={deleteCompletedTodos}>Clear Completed</button>
         </li>
       </ul>
-    </>
+    </div>
   );
 }
 
