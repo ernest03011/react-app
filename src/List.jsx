@@ -47,7 +47,7 @@ function List({ todos, setTodos }) {
 
   return (
     <>
-      <ul>
+      <ul className="mb-8">
         {filteredTodos.map((todo) => (
           <ListItem
             key={todo.id}
