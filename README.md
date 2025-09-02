@@ -22,3 +22,18 @@ This app was created to get familiar with react.js. I was able to explore some o
 - Then, run pnpm dev
 
 Note: I used pnpm since it provides great speed and storage efficiency. However other packages management tool can be used such as npm or yarn.
+
+### Features
+
+CRUD
+
+- Add a TODO
+- View all TODOs
+- Delete a single TODO
+- Edit a single TODO
+
+Extra Features
+
+- View remaining TODOs for completion
+- Filter TODOS by (All, Active - NOt completed yet - , completed )
+- Remove All Completed TODOS
