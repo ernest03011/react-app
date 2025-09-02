@@ -23,9 +23,6 @@ function App() {
       <CreateTodo todos={todos} setTodos={setTodos} />
 
       <List todos={todos} setTodos={setTodos} />
-      {/* I can also add a section or component or part of the Todo that display the completed todos or like a visitbility option to show only 
-      completed or not completed  */}
-      {/* Add an status Bar component with a list of the items left to be completed, a sorting option with all, active, completed, and a button to delete all completed TODOs */}
     </div>
   );
 }
