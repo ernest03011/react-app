@@ -26,7 +26,7 @@ function TodoMenuBar({ todos, setTodos, filter, setFilter }) {
   }
 
   return (
-    <div className="grid sm:grid-cols-12 gap-2">
+    <div className="grid gap-2">
       <ul className="col-span-2">
         <li>{itemsLeft} items left</li>
       </ul>
