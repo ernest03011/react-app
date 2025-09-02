@@ -12,7 +12,7 @@ function ListItem({ todo, onToggle, handleDelete, handleEdit }) {
       <Icon
         onClick={onToggle}
         data-todo-status={todo.complete}
-        className="inline mr-2"
+        className="inline mr-2 flex-shrink-0"
         path={
           todo.complete === true
             ? mdiCheckboxIntermediate
@@ -21,7 +21,7 @@ function ListItem({ todo, onToggle, handleDelete, handleEdit }) {
         size={1}
       />
       <span className="mr-4">{todo.name}</span>
-      <span className="flex">
+      <span className="flex flex-shrink-0">
         <EditTodoModal handleEdit={handleEdit} todo={todo}></EditTodoModal>
         <Icon
           className="inline"
