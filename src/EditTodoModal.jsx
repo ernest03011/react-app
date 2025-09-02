@@ -67,7 +67,12 @@ export function EditTodoModal({ handleEdit, todo }) {
           </div>
           <DialogFooter>
             <DialogClose asChild>
-              <Button variant="outline">Cancel</Button>
+              <Button
+                variant="outline"
+                className="text-gray-400 hover:text-gray-200"
+              >
+                Cancel
+              </Button>
             </DialogClose>
             <Button type="submit">Save changes</Button>
           </DialogFooter>
