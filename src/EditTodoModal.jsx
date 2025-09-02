@@ -48,11 +48,11 @@ export function EditTodoModal({ handleEdit, todo }) {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <form onSubmit={handleSubmit}>
-          <DialogHeader>
+          <DialogHeader className="mb-4">
             <DialogTitle>Edit Task</DialogTitle>
             <DialogDescription>Edit the task name</DialogDescription>
           </DialogHeader>
-          <div className="grid gap-4">
+          <div className="grid gap-4 mb-6">
             <div className="grid gap-3">
               <Label htmlFor="name-1">Name</Label>
               <Input
