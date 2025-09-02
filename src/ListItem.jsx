@@ -12,7 +12,7 @@ function ListItem({ todo, onToggle, handleDelete, handleEdit }) {
       <Icon
         onClick={onToggle}
         data-todo-status={todo.complete}
-        className="inline"
+        className="inline mr-2"
         path={
           todo.complete === true
             ? mdiCheckboxIntermediate
@@ -20,14 +20,16 @@ function ListItem({ todo, onToggle, handleDelete, handleEdit }) {
         }
         size={1}
       />
-      {todo.name}
-      <EditTodoModal handleEdit={handleEdit} todo={todo}></EditTodoModal>
-      <Icon
-        className="inline"
-        size={1}
-        path={mdiTrashCanOutline}
-        onClick={handleDelete}
-      />
+      <span className="mr-4">{todo.name}</span>
+      <span className="flex">
+        <EditTodoModal handleEdit={handleEdit} todo={todo}></EditTodoModal>
+        <Icon
+          className="inline"
+          size={1}
+          path={mdiTrashCanOutline}
+          onClick={handleDelete}
+        />
+      </span>
     </li>
   );
 }
