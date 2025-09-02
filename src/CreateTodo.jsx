@@ -25,7 +25,7 @@ export function CreateTodo({ todos, setTodos }) {
     <div className="mb-4">
       <form
         onSubmit={handleSubmit}
-        className="flex items-center justify-center gap-2 flex-col"
+        className="flex items-center justify-center gap-2 flex-col sm:flex-row"
       >
         <Input
           type="text"
