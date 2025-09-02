@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { CreateTodo } from "./CreateTodo.jsx";
-import List from "./List.jsx";
-import Heading from "./Heading.jsx";
-import TodoMenuBar from "./TodoMenuBar";
+import { CreateTodo } from "@/components/custom/CreateTodo.jsx";
+import List from "@/components/custom/List.jsx";
+import Heading from "@/components/custom/Heading.jsx";
+import TodoMenuBar from "@/components/custom/TodoMenuBar";
 
 function App() {
   const [todos, setTodos] = useState(() => {

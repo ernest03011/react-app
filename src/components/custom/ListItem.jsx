@@ -4,7 +4,7 @@ import {
   mdiCheckboxBlankOutline,
   mdiTrashCanOutline,
 } from "@mdi/js";
-import EditTodoModal from "./EditTodoModal";
+import EditTodoModal from "@/components/custom/EditTodoModal";
 
 function ListItem({ todo, onToggle, handleDelete, handleEdit }) {
   return (

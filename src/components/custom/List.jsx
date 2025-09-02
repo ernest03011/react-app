@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import ListItem from "./ListItem";
+import ListItem from "@/components/custom/ListItem";
 
 function List({ todos, setTodos, filter }) {
   const filteredTodos = useMemo(() => filterTodos(filter), [filter, todos]);
