@@ -1,10 +1,7 @@
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import ListItem from "./ListItem";
-import TodoMenuBar from "./TodoMenuBar";
 
-function List({ todos, setTodos }) {
-  // all, active, completed
-  const [filter, setFilter] = useState("all");
+function List({ todos, setTodos, filter }) {
   const filteredTodos = useMemo(() => filterTodos(filter), [filter, todos]);
 
   function filterTodos(filter) {
@@ -58,12 +55,6 @@ function List({ todos, setTodos }) {
           />
         ))}
       </ul>
-      <TodoMenuBar
-        todos={todos}
-        setTodos={setTodos}
-        filter={filter}
-        setFilter={setFilter}
-      />
     </>
   );
 }

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { CreateTodo } from "./CreateTodo.jsx";
 import List from "./List.jsx";
 import Heading from "./Heading.jsx";
+import TodoMenuBar from "./TodoMenuBar";
 
 function App() {
   const [todos, setTodos] = useState(() => {
@@ -9,6 +10,8 @@ function App() {
     const initialTodos = JSON.parse(savedTodos);
     return initialTodos || [];
   });
+  // all, active, completed
+  const [filter, setFilter] = useState("all");
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -22,7 +25,14 @@ function App() {
 
       <CreateTodo todos={todos} setTodos={setTodos} />
 
-      <List todos={todos} setTodos={setTodos} />
+      <List todos={todos} setTodos={setTodos} filter={filter} />
+
+      <TodoMenuBar
+        todos={todos}
+        setTodos={setTodos}
+        filter={filter}
+        setFilter={setFilter}
+      />
     </div>
   );
 }
