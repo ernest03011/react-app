@@ -37,3 +37,41 @@ Extra Features
 - View remaining TODOs for completion
 - Filter TODOS by (All, Active - NOt completed yet - , completed )
 - Remove All Completed TODOS
+
+### Project Structure
+
+```
+my-app/
+├── public/
+│   └── vite.svg
+├── src/
+│   ├── components/
+│   │   ├── custom/
+│   │   │   ├── App.jsx
+│   │   │   ├── List.jsx
+│   │   │   ├── ListItem.jsx
+│   │   │   ├── CreateTodo.jsx
+│   │   │   ├── EditTodoModal.jsx
+│   │   │   ├── TodoMenuBar.jsx
+│   │   │   └── Heading.jsx
+│   │   └── ui/
+│   │       ├── button.tsx
+│   │       ├── card.tsx
+│   │       ├── dialog.tsx
+│   │       ├── input.tsx
+│   │       └── label.tsx
+│   ├── assets/
+│   │   └── react.svg
+│   ├── index.css
+│   ├── main.jsx
+│   └── lib/
+│       └── utils.ts
+├── components.json
+├── eslint.config.js
+├── index.html
+├── package.json
+├── pnpm-lock.yaml
+├── README.md
+├── tsconfig.json
+└── vite.config.js
+```
