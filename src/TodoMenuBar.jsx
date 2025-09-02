@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
 function TodoMenuBar({ todos, setTodos, filter, setFilter }) {
@@ -63,7 +64,14 @@ function TodoMenuBar({ todos, setTodos, filter, setFilter }) {
       </ul>
       <ul className="col-span-2">
         <li>
-          <button onClick={deleteCompletedTodos}>Clear Completed</button>
+          <Button
+            type="button"
+            variant="outline"
+            className="text-gray-50 hover:text-gray-50"
+            onClick={deleteCompletedTodos}
+          >
+            Clear Completed
+          </Button>
         </li>
       </ul>
     </div>
