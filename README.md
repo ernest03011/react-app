@@ -1,12 +1,24 @@
-# React + Vite
+# Your Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a Todo application that handles CRUD operation and it uses localStorage.
 
-Currently, two official plugins are available:
+## Tech
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React.js
+- Typescript
+- Javascript
+- TailwindCSS
+- ShadCN (component library)
 
-## Expanding the ESLint configuration
+### Purpose
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This app was created to get familiar with react.js. I was able to explore some of the core React Concepts such as Hooks (state, effect, memo), props, children, etc. Also, I was able to work with vite and use a component library such as shadcn.
+
+### Installation
+
+- Clone this repo
+- Go to the repo's folder: cd react-app
+- run pnpm install
+- Then, run pnpm dev
+
+Note: I used pnpm since it provides great speed and storage efficiency. However other packages management tool can be used such as npm or yarn.
