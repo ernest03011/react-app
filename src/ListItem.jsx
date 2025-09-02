@@ -8,7 +8,7 @@ import EditTodoModal from "./EditTodoModal";
 
 function ListItem({ todo, onToggle, handleDelete, handleEdit }) {
   return (
-    <li className="flex">
+    <li className="flex justify-items-start">
       <Icon
         onClick={onToggle}
         data-todo-status={todo.complete}
