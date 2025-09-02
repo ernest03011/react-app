@@ -1,6 +1,6 @@
 # Your Todo App
 
-This is a Todo application that handles CRUD operation and it uses localStorage.
+This is a Todo application that handles CRUD operation and it uses localStorage. This is the [Live Version](https://gorgeous-empanada-19338e.netlify.app/).
 
 ## Tech
 
