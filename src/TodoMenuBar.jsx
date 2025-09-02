@@ -26,7 +26,7 @@ function TodoMenuBar({ todos, setTodos, filter, setFilter }) {
   }
 
   return (
-    <div className="grid gap-2">
+    <div className="flex flex-col md:flex-row gap-2 md:gap-10 items-center justify-center">
       <ul className="col-span-2">
         <li>{itemsLeft} items left</li>
       </ul>
